@@ -12,7 +12,6 @@ public class Application {
 
         System.out.println("시도할 횟수는 몇 회인가요?");
         String tryCountInput = Console.readLine();
-        int tryCount = Integer.parseInt(tryCountInput);
-        TryCountValidator.validate(tryCount);
+        TryCountValidator.validate(tryCountInput);
     }
 }

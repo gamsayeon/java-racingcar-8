@@ -25,5 +25,6 @@ public class Application {
             }
             RacingPrinter.printPositions(carNameList);
         }
+        RacingPrinter.printWinners(carNameList);
     }
 }

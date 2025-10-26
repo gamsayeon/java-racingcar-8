@@ -25,8 +25,8 @@ class ApplicationTest extends NsTest {
                 positionsOutput = positionsOutput.replace("\r\n", "\n");
                 assertThat(positionsOutput).contains("실행 결과\n"
                         + "pobi : -\n"
-                        + "woni :\n"
-                        + "최종 우승자 : pobi\n");
+                        + "woni : \n\n"
+                        + "최종 우승자: pobi");
             },
             MOVING_FORWARD, STOP
         );

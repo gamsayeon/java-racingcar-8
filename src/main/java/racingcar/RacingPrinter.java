@@ -10,4 +10,22 @@ public class RacingPrinter {
         }
         System.out.println();
     }
+
+    public static void printWinners(List<Car> cars) {
+        int maxPosition = cars.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .orElse(0);
+
+        StringBuilder winners = new StringBuilder();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                if (!winners.isEmpty()) {
+                    winners.append(", ");
+                }
+                winners.append(car.getName());
+            }
+        }
+        System.out.println("최종 우승자: " + winners);
+    }
 }

@@ -5,10 +5,14 @@ import racingcar.domain.Car;
 
 public class RacingPrinter {
     public static void printPositions(List<Car> cars) {
+        StringBuilder positions = new StringBuilder();
         for (Car car : cars) {
-            System.out.println(car.getName() + " : " + "-".repeat(car.getPosition()));
+            positions.append(car.getName())
+                    .append(" : ")
+                    .append("-".repeat(car.getPosition()))
+                    .append("\n");
         }
-        System.out.println();
+        System.out.println(positions);
     }
 
     public static void printWinners(List<Car> cars) {

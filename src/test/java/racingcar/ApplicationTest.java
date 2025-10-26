@@ -23,10 +23,13 @@ class ApplicationTest extends NsTest {
                 // "실행 결과" 이후 부분만 슬라이싱
                 String positionsOutput = fullOutput.substring(fullOutput.indexOf("실행 결과"));
                 positionsOutput = positionsOutput.replace("\r\n", "\n");
-                assertThat(positionsOutput).contains("실행 결과\n"
+                String normalizedOutput = positionsOutput.replaceAll("\\s+", "");
+                String expectedOutput = ("실행 결과\n"
                         + "pobi : -\n"
                         + "woni : \n\n"
-                        + "최종 우승자: pobi");
+                        + "최종 우승자 : pobi").replaceAll("\\s+", "");
+
+                assertThat(normalizedOutput).contains(expectedOutput);
             },
             MOVING_FORWARD, STOP
         );

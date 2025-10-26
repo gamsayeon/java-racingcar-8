@@ -26,6 +26,6 @@ public class RacingPrinter {
                 winners.append(car.getName());
             }
         }
-        System.out.println("최종 우승자: " + winners);
+        System.out.println("최종 우승자 : " + winners);
     }
 }

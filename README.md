@@ -3,10 +3,10 @@
 # 기능 요구 사항
 - 자동차 이름 입력 기능
   - 프로그램 시작시 자동차 이름을 문자열로 입력받는다.
-  - 이름은 쉼표(,)를 기준으로 구분하며, 5자 이하만 허용한다.
   - 제약: 사용자가 입력하는 값은 camp.nextstep.edu.missionutils.Console의 readLine()을 활용한다.
 - 시도 횟수 입력 기능
-    - 사용자가 몇 번의 이동을 할 것인지 입력받는다.
+  - 사용자가 몇 번의 이동을 할 것인지 입력받는다.
+  - 제약: 사용자가 입력하는 값은 camp.nextstep.edu.missionutils.Console의 readLine()을 활용한다.
 - 입력값 검증 기능
   - 입력된 이름과 시도 횟수가 유효한지 검증
   - 유효하지 않은경우 IllegalArgumentException 발생

@@ -23,6 +23,7 @@ public class Application {
                 int randomNumber = Randoms.pickNumberInRange(0, 9);
                 car.move(randomNumber);
             }
+            RacingPrinter.printPositions(carNameList);
         }
     }
 }

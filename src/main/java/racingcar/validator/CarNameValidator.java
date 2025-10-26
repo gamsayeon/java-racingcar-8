@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+import racingcar.domain.Car;
 
 public class CarNameValidator {
     public static void validate(String carInput) {
@@ -20,5 +22,12 @@ public class CarNameValidator {
             if(carName.length()>5) throw new IllegalArgumentException("자동차 이름 5자 초과");
             if(!nameSet.add(carName)) throw new IllegalArgumentException("자동차 이름 중복");
         }
+    }
+
+    public static List<Car> parseAndValidate(String carInput) {
+        validate(carInput);
+        return Arrays.stream(carInput.split(","))
+                .map(Car::new)
+                .collect(Collectors.toList());
     }
 }

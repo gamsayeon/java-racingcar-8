@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 public class Car {
     private final String name;
@@ -9,7 +9,9 @@ public class Car {
     }
 
     public void move(int randomNumber) {
-        // TODO: 구현 필요
+        if (randomNumber >= 4) {
+            position++;
+        }
     }
 
     public int getPosition() {

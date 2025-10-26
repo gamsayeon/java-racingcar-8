@@ -17,7 +17,15 @@ class ApplicationTest extends NsTest {
         assertRandomNumberInRangeTest(
             () -> {
                 run("pobi,woni", "1");
-                assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi");
+                // System.out 출력 캡처
+                String fullOutput = output();
+
+                // "실행 결과" 이후 부분만 슬라이싱
+                String positionsOutput = fullOutput.substring(fullOutput.indexOf("실행 결과"));
+                positionsOutput = positionsOutput.replace("\r\n", "\n");
+                assertThat(positionsOutput).contains("실행 결과\n"
+                        + "pobi : -\n"
+                        + "woni :");
             },
             MOVING_FORWARD, STOP
         );

@@ -17,6 +17,7 @@ public class Application {
         String tryCountInput = Console.readLine();
         int tryCount = TryCountValidator.parseAndValidate(tryCountInput);
 
+        System.out.println("실행 결과");
         for (int count = 0; count < tryCount; count++) {
             for (Car car : carNameList) {
                 int randomNumber = Randoms.pickNumberInRange(0, 9);
